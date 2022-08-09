@@ -125,18 +125,18 @@ const formu = document.getElementById("formulario")
 
 formu.onsubmit = async(e) => {
   e.preventDefault()
-  const informacion = await fetch (`https://rickandmortyapi.com/api/character/?name=${e.target.children[0].value}`)
-  .then(response=>response.json())
-  .then(response=>{
-    listado.innerHTML=''
-    response.results.splice(0,e.target.children[2].value).forEach(element=> {
+  try{
+    const informacion = await fetch (`https://rickandmortyapi.com/api/character/?name=${e.target.children[0].value}`)
+    const dataFormateada = await informacion.json ()
+    dataFormateada.splice(0,e.target.children[2].value).forEach(element=> {
       const li = document.createElement('li')
       li.innerHTML = `
       <h2> ${element.name}</h2>
       <img src=${element.image}>
       <p>${element.species} - ${element.gender}</p>`
       listado.appendChild(li)
-    })
-  })
-  .catch(err=>console.log(err))
+    });
+  } catch (error) {
+    console.log(error)
+  }
 }
