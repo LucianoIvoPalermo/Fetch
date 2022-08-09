@@ -119,33 +119,17 @@ buttonReset.onclick = (e) => {
 }
 
 //USO DE API
-const botonApi = document.getElementById("botonApi")
-const listado = document.getElementById("listado")
+
 const formu = document.getElementById("formulario")
 
 
-botonApi.onclick = () =>{
-  fetch ('https://rickandmortyapi.com/api/character')
-  .then(response=>response.json())
-  .then(response=>{
-    response.results.forEach(element=> {
-      const li = document.createElement('li')
-      li.innerHTML = `
-      <h2> ${element.name}</h2>
-      <img src=${element.image}>
-      <p>${element.species} - ${element.gender}</p>`
-      listado.appendChild(li)
-    })
-  })
-  .catch(err=>console.log(err))
-}
-
-formu.onsubmit = (e) => {
+formu.onsubmit = async(e) => {
   e.preventDefault()
-  fetch (`https://rickandmortyapi.com/api/character/?name=${e.target.children[0].value}`)
+  const informacion = await fetch (`https://rickandmortyapi.com/api/character/?name=${e.target.children[0].value}`)
   .then(response=>response.json())
   .then(response=>{
-    response.results.forEach(element=> {
+    listado.innerHTML=''
+    response.results.splice(0,e.target.children[2].value).forEach(element=> {
       const li = document.createElement('li')
       li.innerHTML = `
       <h2> ${element.name}</h2>
