@@ -1,0 +1,166 @@
+/*Generales*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #a56800;
+  background-image: linear-gradient(270deg, #a56800 0%, #ffbf65 100%); 
+}
+
+body nav{
+  font-family: "Press Start 2P", cursive;
+}
+
+body div nav li {
+  background-color: burlywood;
+  opacity: 0.8;
+}
+
+body div nav li:hover {
+  background-color: darkgoldenrod;
+  opacity: 1;
+}
+
+body div header {
+  margin: 20px;
+  padding: 100px;
+  border: black 15px double;
+  text-align: center;
+}
+
+body div header h1 {
+  font-family: "Rubik Glitch", cursive;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body div header h1 .animate__animated .animate__fadeInUp {
+  animation: fadeinup;
+  animation-duration: 5s;
+}
+
+body div h2 {
+  text-align: center;
+}
+
+body main {
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+}
+
+body main section {
+  overflow: auto;
+  padding: 20px;
+  display: inline-block;
+}
+
+footer h4 {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+footer a {
+  font-family: "Press Start 2P", cursive;
+}
+
+.titulo {
+  margin-top: 30px;
+  font-size: 150px;
+  text-align: center;
+  font-family: "Rubik Glitch", cursive;
+  font-weight: bold;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  body h1 {
+    font-size: 130px;
+  }
+  body .titulo {
+    font-size: 130px;
+  }
+  body img {
+    width: auto;
+  }
+  body iframe {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body h1 {
+    font-size: 100px;
+  }
+  body .titulo {
+    font-size: 100px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body h1 {
+    font-size: 50px;
+  }
+  body .titulo {
+    font-size: 50px;
+  }
+  body p {
+    font-size: 15px;
+  }
+}
+
+body section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  body h1 {
+    font-size: 130px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body h1 {
+    font-size: 100px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body h1 {
+    font-size: 50px;
+  }
+  body p {
+    font-size: 15px;
+  }
+}
+
+/*Para Javascript*/
+.div1, .contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
